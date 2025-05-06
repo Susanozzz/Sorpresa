@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff5f8;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+#inicio {
+  padding-top: 100px;
+}
+
+.regalo-titulo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+#regalo {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+#regalo:hover {
+  transform: scale(1.05);
+}
+
+.oculto {
+  display: none;
+}
+
+.frase {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #e91e63;
+  margin-top: 50px;
+}
+
+.mensaje {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  color: #333;
+}
+
+.video {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+/* Globos animados */
+.globos::before, .globos::after {
+  content: '🎈🎈🎈🎈🎈';
+  font-size: 2rem;
+  display: block;
+  animation: subir 6s linear infinite;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Serpentinas animadas */
+.serpentinas::before {
+  content: '🎉🎊🎉🎊';
+  font-size: 2rem;
+  display: block;
+  margin-top: 20px;
+  animation: caer 3s ease-in-out infinite;
+  position: relative;
+}
+
+/* Animaciones */
+@keyframes subir {
+  0% { top: 100vh; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: -100px; opacity: 0; }
+}
+
+@keyframes caer {
+  0% { transform: translateY(-30px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(30px); opacity: 0; }
+}
