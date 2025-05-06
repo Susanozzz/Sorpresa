@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz cumpleaños amor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffeaf4;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .gift-box {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, #ff80b5, #ffb6d9);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.05);
+    }
+
+    .ribbon-horizontal,
+    .ribbon-vertical {
+      position: absolute;
+      background: white;
+    }
+
+    .ribbon-horizontal {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      transform: translateY(-50%);
+    }
+
+    .ribbon-vertical {
+      top: 0;
+      left: 50%;
+      width: 20px;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+
+    .bow {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 30px;
+      background: #ff2e79;
+      border-radius: 50% 50% 0 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .text-on-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    .message-container {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff0f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .message {
+      font-size: 24px;
+      color: #d6006c;
+      max-width: 90%;
+      margin: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .balloon {
+      width: 50px;
+      height: 70px;
+      background: #ff6fa1;
+      border-radius: 50% 50% 50% 50%;
+      position: absolute;
+      bottom: -100px;
+      animation: rise 5s infinite;
+    }
+
+    @keyframes rise {
+      0% { bottom: -100px; opacity: 0; }
+      50% { opacity: 1; }
+      100% { bottom: 110%; opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    iframe {
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gift-box" id="gift">
+    <div class="ribbon-horizontal"></div>
+    <div class="ribbon-vertical"></div>
+    <div class="bow"></div>
+    <div class="text-on-box">Tienes un regalo de Jefferson 🎁</div>
+  </div>
+
+  <div class="message-container" id="messageContainer">
+    <div class="balloon" style="left: 20%; background:#f773a6;"></div>
+    <div class="balloon" style="left: 40%; background:#ffb3da;"></div>
+    <div class="balloon" style="left: 60%; background:#f773a6;"></div>
+    <div class="balloon" style="left: 80%; background:#ffb3da;"></div>
+
+    <div class="message">
+      <h1>🎉 Feliz cumpleaños amor 🎉</h1>
+      <p>
+        Hoy es un día muy especial porque nació la persona que ilumina mi vida.  
+        Solo quiero decirte lo mucho que te amo y lo agradecido que estoy por tenerte.  
+        Espero que tengas un día increíble, lleno de sonrisas, alegría y amor, así como tú llenas mi vida con tu ternura.  
+        Aunque no estemos juntos físicamente hoy, estoy contigo en cada pensamiento, en cada latido.  
+        ¡Te amo con todo mi corazón! 💖
+      </p>
+      <iframe width="300" height="170" src="https://www.youtube.com/embed/u-_0fkY9FhI?autoplay=1&loop=1&playlist=u-_0fkY9FhI" allow="autoplay" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    const gift = document.getElementById('gift');
+    const messageContainer = document.getElementById('messageContainer');
+
+    gift.addEventListener('click', () => {
+      gift.style.display = 'none';
+      messageContainer.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
